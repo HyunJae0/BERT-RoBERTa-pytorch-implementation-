@@ -44,10 +44,10 @@ class ViTEmbeddings(nn.Module):
         self.hidden_size = config.hidden_size
 
         self.cls_token = nn.Parameter(
-            torch.randn(1, 1, config.hidden_size)
+            torch.zero(1, 1, config.hidden_size)
         )
         self.position_embeddings = nn.Parameter(
-            torch.randn(1, num_patches+1, self.hidden_size)
+            torch.zero(1, num_patches+1, self.hidden_size)
         )
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
